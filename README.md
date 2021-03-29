@@ -37,31 +37,22 @@ The **0.0.3** version of this app is currently uploaded.  In cases where I updat
 
 Version XXXXXXX is the first version with the full range of intended functions successfully implemented.  Version 1.0.0 is the first to be both full functional and styled with optimized coding.
 
-#### v 0.0.1 | 27 March 2021 | commit 1e0137027113e330d1ce3de0f697525306bc09c7 | Initial Commit
-* Created boilerplate app files with `npx express-generator -v`
+#### v 0.0.1 | 27 March 2021 | commit c89c5eadc31db4d90354b8af756593698eb16ea1 | Initial Commit
+* Created boilerplate app files by cloning from template repository
   * Set view engine to EJS
   * Installed dependencies
-* Changed `app.js` to `server.js` and updated imports as appropriate.
+* Initialized GitHub repository and set as remote repo in `.git`
 
-#### v 0.0.2 | 27 March 2021 | commit ed8121dfb51c71deda99df7418b82872597e421e
-* Initialized a local respository and attached it to a GitHub repository.
-* Updated `var` variables to `const` throughout boilerplate code.
-  * No changes to `package.json`, `package-lock.json`, `node-modules`.
-* Sectioned code in `server.js` with comment syntax
-* Installed additional middleware:
-  * `method-override` via `npm i method-override`
-  * `mongoose` via `npm i mongoose`
-  * `express-session` via `npm i express-session`
-  * `dotenv` via `npm i dotenv`
-  * `passport` via `npm i passport`
-* Created new files and directories:
-  * Made `README.md` and built out with initial content.
-  * Made `.env` file.
-  * Made directories for `config`, `controllers`, and `models`.
-  * Made `config/database.js` and configured settings for Mongoose.
-* *Important!* This commit only involves configuring and adding to the existing boilerplate.  No functional changes coded aside from imports/exports.
+#### v 0.0.2 | 28 March 2021 | commit ed8121dfb51c71deda99df7418b82872597e421e
+* Set up a new app in Google to allow for OAuth 2.0 user verification.
+  * Configured `.env` file with necessary data for OAuth and to connect to the MongoDB server.
 
-#### v 0.0.3 | 27 March 2021 | commit -- | Current Version
+#### v 0.0.3 | 28 March 2021 | commit -- | Current Version
+* Sectioned code in `server.js` with comment syntax.
+* Made controllers directory.
+* Rendering `/applications` index page (no data).
+* Rendering `/applications/new` form creation page.
+* Passing information successfully for partial rendering `<head>` and `<nav>`.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>

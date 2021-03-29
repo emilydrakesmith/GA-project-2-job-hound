@@ -1,3 +1,4 @@
+/*******  START: EXPRESS.JS MIDDLEWARE IMPORTS  *******/
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -5,55 +6,77 @@ const logger = require("morgan");
 const session = require("express-session");
 const passport = require("passport");
 const methodOverride = require("method-override");
+/*******  END: EXPRESS.JS MIDDLEWARE IMPORTS  *******/
 
-// load env variables
+
+/*******  START: LOAD .env VARIABLES  *******/
 require("dotenv").config();
+/*******  END: LOAD .env VARIABLES  *******/
 
-// create the express app
+
+/*******  START: CREATE THE EXPRESS APP  *******/
 const app = express();
+/*******  END: CREATE THE EXPRESS APP  *******/
 
-// connect to MongoDB with mongoose
+
+/*******  START: MONGOOSE CONNECTION TO MONGODB  *******/
 require("./config/database");
+/*******  END: MONGOOSE CONNECTION TO MONGODB  *******/
 
-// load passport
+
+/*******  START: LOAD PASSPORT  *******/
 require("./config/passport");
+/*******  END: LOAD PASSPORT  *******/
 
-// require routes
+
+/*******  START: CREATE ROUTERS  *******/
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
+const applicationsRouter = require('./routes/applications');
+/*******  START: CREATE ROUTERS  *******/
 
-// view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
 
-// misc middleware
+/*******  START: VIEW ENGINE SETUP  *******/
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+/*******  END: VIEW ENGINE SETUP  *******/
+
+
+/*******  START: ATTACH ADDITIONAL MIDDLEWARE TO APP  *******/
 app.use(methodOverride("_method"));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
+/*******  END: ATTACH ADDITIONAL MIDDLEWARE TO APP  *******/
 
-// session middleware
+
+/*******  START: ATTACH SESSION MIDDLEWARE TO APP  *******/
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: {
-      sameSite: "lax",
-    },
+    cookie: {sameSite: "lax"},
   })
 );
+/*******  END: ATTACH SESSION MIDDLEWARE TO APP  *******/
 
-// passport middleware
+
+/*******  START: ATTACH PASSPORT MIDDLEWARE TO APP  *******/
 app.use(passport.initialize());
 app.use(passport.session());
+/*******  END: ATTACH PASSPORT MIDDLEWARE TO APP  *******/
 
-// router middleware
+
+/*******  START: ATTACH ROUTERS TO APP  *******/
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+app.use("/applications", applicationsRouter);
+/*******  END: ATTACH ROUTERS TO APP  *******/
 
-// catch 404 and forward to error handler
+
+/*******  START: 404 AND ERROR HANDLING  *******/
 app.use(function (req, res, next) {
   next(createError(404));
 });
@@ -68,5 +91,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+/*******  END: 404 AND ERROR HANDLING  *******/
 
 module.exports = app;
