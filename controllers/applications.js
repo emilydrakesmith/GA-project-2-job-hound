@@ -18,14 +18,19 @@ function getIndex(req, res) {
 
 function newAppForm(req, res) {
     res.render('applications/new', { title: "Create New Application", user: req.user ? req.user : null });
-    console.log(req);
+    //console.log(req.user);
 }
 
 function createNewApp(req, res) {
-    console.log(req.body);
-    res.redirect('/applications/new')
+    //console.log(req.body);
+    const application = new Application(req.body);
+    application.save(function(err) {
+        if (err) return res.render('applications/new');
+        //console.log(application);
+        res.redirect('/applications');
+    });
 }
-/******* START: CONTROLLER FUNCTIONS *******/
+/******* END: CONTROLLER FUNCTIONS *******/
 
 module.exports = {
     index: getIndex,

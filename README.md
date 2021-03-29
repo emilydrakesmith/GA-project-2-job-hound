@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.0.3** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.0.4** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -47,12 +47,14 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Set up a new app in Google to allow for OAuth 2.0 user verification.
   * Configured `.env` file with necessary data for OAuth and to connect to the MongoDB server.
 
-#### v 0.0.3 | 28 March 2021 | commit -- | Current Version
+#### v 0.0.3 | 29 March 2021 | commit 533b18e7f34017acbd4ee345e7bb3cea857f3ab3
 * Sectioned code in `server.js` with comment syntax.
 * Made controllers directory.
 * Rendering `/applications` index page (no data).
 * Rendering `/applications/new` form creation page.
 * Passing information successfully for partial rendering `<head>` and `<nav>`.
+
+#### v 0.0.4 | 29 March 2021 | commit -- | Current Version
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -90,6 +92,8 @@ Note that there's a good chance this section will not be necessary.
 <a id='future-plans'></a>
 
 # Future Plans
+* Allow user to alter basic user data (name, etc) after Mongoose automatically creates a user in the user database.
+  * Will need to branch the login process to not overwrite data if the user already exists per a matched `req.user.GoogleId` value.
 
 [Back to Top](#top)
 <a id='contribute'></a>
