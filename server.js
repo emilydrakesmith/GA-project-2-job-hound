@@ -9,19 +9,15 @@ const methodOverride = require("method-override");
 /*******  END: EXPRESS.JS MIDDLEWARE IMPORTS  *******/
 
 
-/*******  START: LOAD .env VARIABLES  *******/
+/*******  START: LOAD .env VARIABLES FOR DATABASE CONFIG  *******/
 require("dotenv").config();
+require("./config/database");
 /*******  END: LOAD .env VARIABLES  *******/
 
 
 /*******  START: CREATE THE EXPRESS APP  *******/
 const app = express();
 /*******  END: CREATE THE EXPRESS APP  *******/
-
-
-/*******  START: MONGOOSE CONNECTION TO MONGODB  *******/
-require("./config/database");
-/*******  END: MONGOOSE CONNECTION TO MONGODB  *******/
 
 
 /*******  START: LOAD PASSPORT  *******/
