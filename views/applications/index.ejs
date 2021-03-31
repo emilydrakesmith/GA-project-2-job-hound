@@ -3,6 +3,20 @@
 <main>
     <h1>This is the applications index page.</h1>
     <a href='/applications/new'>Click to log a new application.</a>
+
+    
+        <% applications.forEach(appl => { %>
+        
+            <section>
+                Company: <%=appl.company %><br>
+                Job Title: <%=appl.jobTitle%><br>
+                Job Id: <%=appl.jobId%><br>
+                <a href='/applications/<%=appl._id%>'>View Details</a>
+            </section><br><br>
+
+        <% }) %>
+    
+
 </main>
 
 <%- include('../partials/footer') %>

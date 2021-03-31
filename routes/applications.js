@@ -26,7 +26,8 @@ const applicationsCtrl = require('../controllers/applications');
 
 /* GET Requests */
 router.get('/', applicationsCtrl.index);
-router.get('/new', applicationsCtrl.new)
+router.get('/new', applicationsCtrl.new);
+router.get('/:id', applicationsCtrl.show);
 
 /* POST Requests */
 router.post('/', applicationsCtrl.create)

@@ -11,9 +11,14 @@ const Application = require('../models/application');
  *      data into the HTML with EJS.
  */
 
-/******* START: CONTROLLER FUNCTIONS *******/
+
 function getIndex(req, res) {
-    res.render('applications/index', { title: "Applications", user: req.user ? req.user : null })
+    Application.find({})
+        .then(applications => res.render('applications/index', {
+            title: 'Applications',
+            user: req.user ? req.user : null,
+            applications
+        }))
 }
 
 function newAppForm(req, res) {
@@ -21,8 +26,34 @@ function newAppForm(req, res) {
     //console.log(req.user);
 }
 
+/** SHOW Function Construction
+ *      
+ *      Call .findByID() on the database being referenced
+ *      
+ *          1st arg: id specified in the GET request router (ie: /applications/:id) 
+ *          2nd arg: callback with two arguments
+ *                  1st arg: error (if an error is returned)
+ *                  2nd arg: document from database where document ID === req.params.id
+ * 
+ *       Then call res.render() inside callback with two args
+ *          
+ *          1st arg: specify the view to use
+ *          2nd arg: data to be passed to view
+ */
+
+function showApplication(req, res) {
+    Application.findById(req.params.id, (err, application) => {
+        console.log(`req.params.id: ${req.params.id}`)
+        res.render('applications/show', {title: 'Application Detail', application, user: req.user ? req.user : null});
+    })
+    //res.render('applications/')
+}
+
 function createNewApp(req, res) {
     //console.log(req.body);
+    //console.log(`req.user on form input: ${typeof req.user.id}`)
+    req.body.addedBy = req.user.id;
+    console.log(req.body);
     const application = new Application(req.body);
     application.save(function(err) {
         if (err) return res.render('applications/new');
@@ -35,5 +66,6 @@ function createNewApp(req, res) {
 module.exports = {
     index: getIndex,
     new: newAppForm,
+    show: showApplication,
     create: createNewApp
 }

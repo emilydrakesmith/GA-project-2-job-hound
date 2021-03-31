@@ -2,7 +2,7 @@
 
 # Introduction
 
-*Job Hound*, is an app that will allow users who are conducting an active job search to collect information about jobs they have applied to and to plan their process for and organize data about follow-up activities related to their job applications.
+*Job Hound* is an app that will allow users who are conducting an active job search to collect information about jobs they have applied to and to plan their process for and organize data about follow-up activities related to their job applications.
 
 I am creating this app as a Unit 2 assessment from General Assembly's Software Engineering Immersive-Remote program.  For more information about the specifications of this assignment, please reference [Appendix A: Unit 1 Project Assignment from General Assembly](#appendix-a-assignment).
 
@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.0.5** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.1.0** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -54,10 +54,14 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Rendering `/applications/new` form creation page.
 * Passing information successfully for partial rendering `<head>` and `<nav>`.
 
-#### v 0.0.4 | 29 March 2021 | commit 21013a70d312ce4fdb81732c15db1e521fd29413 | Current Version
+#### v 0.0.4 | 29 March 2021 | commit 21013a70d312ce4fdb81732c15db1e521fd29413
 * Data entered into the form at `/applications/new` being posted to database.
 
-#### v 0.0.5 | 29 March 2021 | commit -- | Current Version
+#### v 0.0.5 | 30 March 2021 | commit 2c3e67b5c7f61909ad137c9d6760f06196c5e874
+* Set up a new remote origin with Heroku for product deployment.
+
+#### v 0.1.0 | 30 March 2021 | commit -- | Current Version
+* Rendering details page for individual job applications.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -80,8 +84,8 @@ Version XXXXXXX is the first version with the full range of intended functions s
 
 ### This app is hosted at:
 * [GitHub Repo](https://github.com/mhsmith321/GA-project-2-job-hound)
-* GitHub Hosted Site
-* Surge.sh Hosted Site
+* [Heroku Repo](https://git.heroku.com/jobhound-1-mhs.git)
+* [Heroku Hosted Site](https://jobhound-1-mhs.herokuapp.com/)
 
 [Back to Top](#top)
 <a id='apis'></a>
