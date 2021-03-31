@@ -28,38 +28,33 @@ function newAppForm(req, res) {
 
 /** SHOW Function Construction
  *      
- *      Call .findByID() on the database being referenced
- *      
- *          1st arg: id specified in the GET request router (ie: /applications/:id) 
- *          2nd arg: callback with two arguments
- *                  1st arg: error (if an error is returned)
- *                  2nd arg: document from database where document ID === req.params.id
- * 
- *       Then call res.render() inside callback with two args
- *          
- *          1st arg: specify the view to use
- *          2nd arg: data to be passed to view
+ *      1. Call .findByID() on the database being referenced
+ *            Single arg: id specified in the GET request router (ie: /applications/:id)
+ *      2. Use .then() to make a callback function with the document returned by step 1
+ *              1st arg: filepath to view inside 'views' directory
+ *              2nd arg: data to feed into the specified view 
  */
 
 function showApplication(req, res) {
-    Application.findById(req.params.id, (err, application) => {
-        console.log(`req.params.id: ${req.params.id}`)
-        res.render('applications/show', {title: 'Application Detail', application, user: req.user ? req.user : null});
-    })
-    //res.render('applications/')
+    Application.findById(req.params.id)
+        .then(application => res.render('applications/show', {
+            title: 'Application Detail',
+            application,
+            user: req.user ? req.user : null
+        }));
 }
 
-function createNewApp(req, res) {
-    //console.log(req.body);
-    //console.log(`req.user on form input: ${typeof req.user.id}`)
-    req.body.addedBy = req.user.id;
-    console.log(req.body);
-    const application = new Application(req.body);
-    application.save(function(err) {
-        if (err) return res.render('applications/new');
-        //console.log(application);
-        res.redirect('/applications');
-    });
+function createNewApp(req, res) {                                     // FUNCTION TO CREATE A NEW ENTRY IN 'APPLICATIONS' DATABASE
+    req.body.addedBy = req.user.id;                                   // add user.id value to document to link document to a user
+    const application = new Application(req.body);                    // create a new document with 'Application' schema, hold in variable 'application'
+    application.save(err => err ? res.render('applications/new')      // save document to database; if error is returned, re-render app create form
+                                : res.redirect('/applications')       // if no error redirect to the 'applications' route
+    );
+}
+
+function deleteApp(req, res) {
+    Application.findByIdAndDelete(req.params.id)
+        .then(() => res.redirect(`/applications`))
 }
 /******* END: CONTROLLER FUNCTIONS *******/
 
@@ -67,5 +62,6 @@ module.exports = {
     index: getIndex,
     new: newAppForm,
     show: showApplication,
-    create: createNewApp
+    create: createNewApp,
+    delete: deleteApp
 }

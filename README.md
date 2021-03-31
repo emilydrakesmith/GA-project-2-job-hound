@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.1.0** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.1.1** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -60,8 +60,11 @@ Version XXXXXXX is the first version with the full range of intended functions s
 #### v 0.0.5 | 30 March 2021 | commit 2c3e67b5c7f61909ad137c9d6760f06196c5e874
 * Set up a new remote origin with Heroku for product deployment.
 
-#### v 0.1.0 | 30 March 2021 | commit -- | Current Version
+#### v 0.1.0 | 30 March 2021 | commit 05c198061267855b92d3a446fd37c827180dd04f
 * Rendering details page for individual job applications.
+
+#### v 0.1.1 | 30 March 2021 | commit -- | Current Version
+* Refactored existing controller functions to use `.then()` syntax.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -101,6 +104,7 @@ Note that there's a good chance this section will not be necessary.
 # Future Plans
 * Allow user to alter basic user data (name, etc) after Mongoose automatically creates a user in the user database.
   * Will need to branch the login process to not overwrite data if the user already exists per a matched `req.user.GoogleId` value.
+* Use `.catch(err => [stuff])` to add error handling to controller functions.
 
 [Back to Top](#top)
 <a id='contribute'></a>

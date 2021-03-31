@@ -30,6 +30,9 @@ router.get('/new', applicationsCtrl.new);
 router.get('/:id', applicationsCtrl.show);
 
 /* POST Requests */
-router.post('/', applicationsCtrl.create)
+router.post('/', applicationsCtrl.create);
+
+/* DELETE Requests */
+router.delete('/:id', applicationsCtrl.delete);
 
 module.exports = router;
