@@ -12,7 +12,7 @@ const applicationsCtrl = require('../controllers/applications');
  * 
  *          router                          built-in feature of express, imported above
  *          .get                            HTTP method specified in the request
- *          '/'                             first arg, specifies filepath inside /todos
+ *          '/'                             first arg, specifies filepath inside /applications
  *.         applicationsCtrl.Index          second arg, function to execute on the filepath
  */
 
@@ -28,9 +28,13 @@ const applicationsCtrl = require('../controllers/applications');
 router.get('/', applicationsCtrl.index);
 router.get('/new', applicationsCtrl.new);
 router.get('/:id', applicationsCtrl.show);
+router.get('/:id/update', applicationsCtrl.updateForm)
 
 /* POST Requests */
 router.post('/', applicationsCtrl.create);
+
+/* PUT Requests */
+router.put('/:id', applicationsCtrl.update);
 
 /* DELETE Requests */
 router.delete('/:id', applicationsCtrl.delete);

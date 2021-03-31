@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<main>
+    <h1>This is the application update page.</h1>
+    <form action='/applications/<%=application._id%>?_method=PUT' method='POST'>
+        <%# all input fields pre-populate with existing data %> 
+        <label>Company:<input type='text' name='company' value='<%=application.company%>' autofocus></label><br>
+        <label>Job Title:<input type='text' name='jobTitle' value='<%=application.jobTitle%>'></label><br>
+        <label>Job ID:<input type='text' name='jobId' value='<%=application.jobId%>'></label><br>
+        <input type='submit' value='Update Data'>
+    </form>
+</main>
+
+<%- include('../partials/footer') %>

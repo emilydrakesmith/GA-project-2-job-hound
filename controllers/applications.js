@@ -1,3 +1,4 @@
+const { application } = require('express');
 const Application = require('../models/application');
 
 /**   All render() functions take two arguments:
@@ -13,7 +14,7 @@ const Application = require('../models/application');
 
 
 function getIndex(req, res) {
-    Application.find({})
+    Application.find({addedBy: req.user._id})
         .then(applications => res.render('applications/index', {
             title: 'Applications',
             user: req.user ? req.user : null,
@@ -44,6 +45,16 @@ function showApplication(req, res) {
         }));
 }
 
+function updateForm(req, res){
+    Application.findById(req.params.id)
+        .then(console.log('hi there'))
+        .then(application => res.render('applications/update', {
+            title: 'Application Detail',
+            application,
+            user: req.user ? req.user : null
+        }))
+}
+
 function createNewApp(req, res) {                                     // FUNCTION TO CREATE A NEW ENTRY IN 'APPLICATIONS' DATABASE
     req.body.addedBy = req.user.id;                                   // add user.id value to document to link document to a user
     const application = new Application(req.body);                    // create a new document with 'Application' schema, hold in variable 'application'
@@ -52,9 +63,15 @@ function createNewApp(req, res) {                                     // FUNCTIO
     );
 }
 
+function updateApp(req, res) {
+    const application = new Application(req.body);
+    Application.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        .then(() => res.redirect(`/applications/${req.params.id}`));
+}
+
 function deleteApp(req, res) {
     Application.findByIdAndDelete(req.params.id)
-        .then(() => res.redirect(`/applications`))
+        .then(() => res.redirect(`/applications`));
 }
 /******* END: CONTROLLER FUNCTIONS *******/
 
@@ -62,6 +79,8 @@ module.exports = {
     index: getIndex,
     new: newAppForm,
     show: showApplication,
+    updateForm,
     create: createNewApp,
+    update: updateApp,
     delete: deleteApp
 }

@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.1.1** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.1.2** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -63,8 +63,12 @@ Version XXXXXXX is the first version with the full range of intended functions s
 #### v 0.1.0 | 30 March 2021 | commit 05c198061267855b92d3a446fd37c827180dd04f
 * Rendering details page for individual job applications.
 
-#### v 0.1.1 | 30 March 2021 | commit -- | Current Version
+#### v 0.1.1 | 31 March 2021 | commit de57380bdfd8ec98db467e5a722003dae147110e
 * Refactored existing controller functions to use `.then()` syntax.
+* Job apps `show` page has a working delete button.
+
+#### v 0.1.2 | 30 March 2021 | commit de57380bdfd8ec98db467e5a722003dae147110e
+* Controller function `getIndex()` in `/controllers/applications` only returns data for the logged-in user.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -152,7 +156,8 @@ As a User:
 
 ### User Stories
 1. Adam is a recent college graduate in a highly competitive field where 200-300 job applications in a cycle are not uncommon.  He's concerned about filling out so many job applications while being able to keep them organized for follow-up, review prior to interviews, and looking for common trends among applications that get advanced in the application process.  He downloads Job Hound to keep track of all his applications and organize data about each efficiently.
-2. Michelle received multiple job offers and accepted one from a company that offered the best compensation and career advancement opportunities.  However, during her orientation, she was shown a sheet with her compensation in writing that was substantially different from what she verbally agreed to and her new supervisor responded with a sexist remark when she pointed this out.  When orientation breaks for lunch, she gets out Job Tracker App to review details on two other offers she received, finds contact information for her main contact with both, and finds out when calling that one is still willing to honor the offer.  She informs the current company she no longer wishes to work for them and picks up paperwork from her new employer in the afternoon.
+2. Michelle received multiple job offers and accepted one from the company offering the best compensation and career advancement opportunities.  However, during her orientation, she was shown a sheet with her compensation in writing that was substantially different from what she verbally agreed to and her new supervisor responded with a sexist remark when she pointed this out.  When orientation breaks for lunch, she opens Job Hound to review details on two other offers she received, finds contact information for her main contact with both, and learns when calling that one is still willing to honor the offer.  She informs the current company she no longer wishes to work for them and picks up paperwork from her new employer in the afternoon.
+3. Joseph is being evaluated for a position as a senior developer with software company and is going through multiple rounds of technical and non-technical interviews.  He's striking up a significant rapport with all the people he meets with and several have told him that even if they don't hire him now, they're extremely impressed want to know if he'd be interested in any other open positions or future opportunities.  Joseph is very interested in this company and wants to retain contact information for the people he interviews with in relation to the current interview process.  He keeps everyone's contact information to enter into Job Hound which he then syncs with Outlook and LinkedIn.  He also uses the embedded data to schedule follow-ups with individual people.
 
 ### Databases
 
