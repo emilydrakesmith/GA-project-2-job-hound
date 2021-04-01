@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.1.5** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.1.6** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -80,12 +80,16 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Rendering link to `/follows` directory in `/`.  Renders successfully but no data yet.
 * Rendering form for creating a new Follow-Up in `/applications/:id/noew-follow-up`.
 
-#### v 0.1.5 | 01 April 2021 | commit -- | Current Version
+#### v 0.1.5 | 01 April 2021 | commit c034cdb3b8a34af97c3660df8d5afb50a831639a
 * Corrected action on Follow-Up create form from `/applications` to `/follows`.
 * Refactored `Follow` model in `/models/follow.js` so keys indicate they are in the `Follow` database.
 * Form to create a new `Follow` is sending data to proper database with reference to the parent job application.
 * Follow-Ups in database are rendering in `/follows` directory.
 
+#### v 0.1.6 | 01 April 2021 | commit -- | Current Version
+* Rendering a view for individual Follow-Ups clickable from entries in the `/follows` directory.
+* Index view for `/follows` truncates `follow_detail` value to a snippet if over a specified length.
+* Function `getIndex()` in `controllers/follows.js` will only return Follow-Ups for the logged-in user.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -125,7 +129,10 @@ Note that there's a good chance this section will not be necessary.
 # Future Plans
 * Allow user to alter basic user data (name, etc) after Mongoose automatically creates a user in the user database.
   * Will need to branch the login process to not overwrite data if the user already exists per a matched `req.user.GoogleId` value.
-* Use `.catch(err => [stuff])` to add error handling to controller functions.
+* Use `.catch(err => [stuff])` to refactor error handling on controller functions.
+* Make sure that deleting a job application also deletes scheduled Follow-Ups.
+  * Add a warning prompt about this too.
+* Add code to correct dates entered on Job Apps and Follow-Ups and to display in a more accessible format.
 
 [Back to Top](#top)
 <a id='contribute'></a>

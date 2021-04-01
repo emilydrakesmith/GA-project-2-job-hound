@@ -1,21 +1,19 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h1>This is the Follow Ups index page.</h1>
+    <h1>This is the Follow Ups Show page.</h1>
 
     <section>
-        <% follows.forEach(follow => { %>
         
-            <section>
+            <section class='follow-priority-<%=follow.follow_priority%>'>
                 Title: <%=follow.follow_title %><br>
                 Priority: <%=follow.follow_priority%><br>
                 Complete On: <%=follow.follow_scheduled_date%><br>
-                Details: <%=follow.follow_detail.length < 25 ? follow.follow_detail : follow.follow_detail.substring(0,24) + '...'%><br>
+                Details: <%=follow.follow_detail%><br>
                 Complete: <%=follow.follow_done ? 'Yes' : 'No'%><br>
-                <a href='/follows/<%=follow._id%>'>View Full Details</a>
+                <a href='/follows'>Return to Follow-Ups Page</a>
             </section><br><br>
 
-        <% }) %>
     </section>
 
 </main>

@@ -6,7 +6,7 @@ const applicationSchema = new Schema({
     company: {type: String, required: true},
     jobTitle: {type: String, required: true},
     jobId: String,
-    follows: []
+    appl_follows: []
 },{
     timestamps: true
 });
