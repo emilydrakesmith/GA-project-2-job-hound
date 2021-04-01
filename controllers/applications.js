@@ -55,11 +55,11 @@ function updateForm(req, res){
 }
 
 function newFollowForm(req, res) {
-    req.body.follow_addedBy = req.user.id;
-    req.body.follow_assoc_application = req.params.id;
+    console.log(`req.params.id on form link click: ${req.params.id}`)
     res.render('applications/new-follow', {
         title: "Create New Application",
-        user: req.user ? req.user : null
+        user: req.user ? req.user : null,
+        jobApplicationId: req.params.id
     });
 }
 

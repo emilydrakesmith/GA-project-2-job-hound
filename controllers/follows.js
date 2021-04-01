@@ -10,6 +10,16 @@ function getIndex(req, res) {
         }))
 }
 
+function createNewFollow(req, res) {
+    console.log('create new follow triggered')
+    console.log(`req.params.id: ${req.user.id}`)
+    req.body.follow_addedBy = req.user.id;
+    const follow = new Follow(req.body);
+    follow.save(err => err ? res.redirect('`/applications')
+                           : res.redirect('/applications'));
+}
+
 module.exports = {
     index: getIndex,
+    create: createNewFollow,
 }

@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.1.4** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.1.5** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -73,12 +73,18 @@ Version XXXXXXX is the first version with the full range of intended functions s
 #### v 0.1.3 | 31 March 2021 | commit b7f9156c2fd67258cac3bb412f5667681d9c2ec4
 * Controller function `getIndex()` in `/controllers/applications` only returns data for the logged-in user.
 
-#### v 0.1.4 | 01 April 2021 | commit -- | Current Version
+#### v 0.1.4 | 01 April 2021 | commit 3a0f8a2850b64ccdc3ac47a22623aef04bf3954e
 * Refactored `models/application.js` and `views/applications/new.ejs` to require fields properly.
 * Added routing and empty controller for new Follow-Up creation form.
 * On OAuth login, app redirects to `'/'` instead of `/applications`.
 * Rendering link to `/follows` directory in `/`.  Renders successfully but no data yet.
 * Rendering form for creating a new Follow-Up in `/applications/:id/noew-follow-up`.
+
+#### v 0.1.5 | 01 April 2021 | commit -- | Current Version
+* Corrected action on Follow-Up create form from `/applications` to `/follows`.
+* Refactored `Follow` model in `/models/follow.js` so keys indicate they are in the `Follow` database.
+* Form to create a new `Follow` is sending data to proper database with reference to the parent job application.
+* Follow-Ups in database are rendering in `/follows` directory.
 
 
 [Back to Top](#top)

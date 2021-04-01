@@ -6,7 +6,7 @@
 
 <%# value attached tothe 'name' attribute will be matched to a key in a schema %>  
 
-<form id='new-follow-form' action='/applications/:id' method='POST'>
+<form id='new-follow-form' action='/follows' method='POST'>
     <fieldset>
         <legend>Add a New Follow-Up</legend>
     <label>Follow Up: <input type='text' name='follow_title' required autofocus></label><br><br>
@@ -19,6 +19,7 @@
         </select>
     </label><br><br>
     <label>Details: <textarea name='follow_detail' id='follow-detail-textarea' cols='30' rows='10'></textarea></label><br><br>
+    <input type='hidden' name='follow_assoc_appl' value=<%=jobApplicationId%>>
     <input type='submit' value='Add New Follow-Up'>
 </fieldset>
 </form>

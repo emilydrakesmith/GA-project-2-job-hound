@@ -7,8 +7,11 @@
         <% follows.forEach(follow => { %>
         
             <section>
-                Company: <%=follow.title %><br>
-                Details: <%=follow.details%><br>
+                Title: <%=follow.follow_title %><br>
+                Priority: <%=follow.follow_priority%><br>
+                Complete On: <%=follow.follow_scheduled_date%><br>
+                Details: Complete On: <%=follow.follow_detail%><br>
+                Complete: <%=follow.follow_done ? 'Yes' : 'No'%><br>
                 <a href='/follows/<%=follow._id%>'>View Full Details</a>
             </section><br><br>
 

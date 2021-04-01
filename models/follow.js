@@ -7,7 +7,8 @@ const followSchema = new Schema({
     follow_scheduled_date: {type: Date, required: true},
     follow_priority: {type: String, required: true},
     follow_detail: String,
-    follow_done: {type: Boolean, default: false}
+    follow_done: {type: Boolean, default: false},
+    follow_assoc_appl: {type: String, required: true}
 },{
     timestamps: true
 });
