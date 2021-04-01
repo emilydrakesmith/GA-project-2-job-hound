@@ -1,4 +1,4 @@
-<%- include('../partials/header')  %> 
+<%-include('../partials/header')%> 
 
 <h1>This is the create new application form page.</h1>
 
@@ -7,10 +7,13 @@
 <%# value attached tothe 'name' attribute will be matched to a key in a schema %>  
 
 <form id='new-app-form' action='/applications' method='POST'>
-    <label>Company:<input type='text' name='company' autofocus></label><br>
-    <label>Job Title:<input type='text' name='jobTitle'></label><br>
+    <fieldset>
+    <legend>Log a New Application</legend>
+    <label>Company:<input type='text' name='company' required autofocus></label><br>
+    <label>Job Title:<input type='text' name='jobTitle' required></label><br>
     <label>Job ID:<input type='text' name='jobId'></label><br>
     <input type='submit' value='Add New Application'>
+    </fieldset>
 </form>
 
-<%- include('../partials/footer')  %> 
+<%-include('../partials/footer')%> 

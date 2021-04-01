@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.1.2** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.1.4** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -68,7 +68,18 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Job apps `show` page has a working delete button.
 
 #### v 0.1.2 | 30 March 2021 | commit de57380bdfd8ec98db467e5a722003dae147110e
+* Button to delete job application works.
+
+#### v 0.1.3 | 31 March 2021 | commit b7f9156c2fd67258cac3bb412f5667681d9c2ec4
 * Controller function `getIndex()` in `/controllers/applications` only returns data for the logged-in user.
+
+#### v 0.1.4 | 01 April 2021 | commit -- | Current Version
+* Refactored `models/application.js` and `views/applications/new.ejs` to require fields properly.
+* Added routing and empty controller for new Follow-Up creation form.
+* On OAuth login, app redirects to `'/'` instead of `/applications`.
+* Rendering link to `/follows` directory in `/`.  Renders successfully but no data yet.
+* Rendering form for creating a new Follow-Up in `/applications/:id/noew-follow-up`.
+
 
 [Back to Top](#top)
 <a id='tech-framework'></a>

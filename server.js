@@ -29,6 +29,7 @@ require("./config/passport");
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const applicationsRouter = require('./routes/applications');
+const followsRouter = require('./routes/follows');
 /*******  START: CREATE ROUTERS  *******/
 
 
@@ -69,6 +70,7 @@ app.use(passport.session());
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/applications", applicationsRouter);
+app.use('/follows', followsRouter);
 /*******  END: ATTACH ROUTERS TO APP  *******/
 
 

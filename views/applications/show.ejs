@@ -5,6 +5,7 @@
     
         
             <section>
+                <h4>Application Details</h4>
                 Company: <%=application.company%><br><br>
                 Job Title: <%=application.jobTitle%><br><br>
                 JobID: <%=application.jobId%><br><br>
@@ -19,8 +20,11 @@
                 <a href='/applications'>Return to All Applications</a>
             </section>
             
+            <a href='/applications/<%=application._id%>/new-follow-up'>Add a Follow-Up</a>
 
             <section>
+                <h4>Follow-Ups</h4>
+
                 <%# use ejsif - if there are follow-ups scheluled (done or otherwise), render them %>
                 <%# else render text 'no follow-ups scheduled' %> 
             </section>

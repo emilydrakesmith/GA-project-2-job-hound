@@ -24,7 +24,6 @@ function getIndex(req, res) {
 
 function newAppForm(req, res) {
     res.render('applications/new', { title: "Create New Application", user: req.user ? req.user : null });
-    //console.log(req.user);
 }
 
 /** SHOW Function Construction
@@ -55,16 +54,25 @@ function updateForm(req, res){
         }))
 }
 
+function newFollowForm(req, res) {
+    req.body.follow_addedBy = req.user.id;
+    req.body.follow_assoc_application = req.params.id;
+    res.render('applications/new-follow', {
+        title: "Create New Application",
+        user: req.user ? req.user : null
+    });
+}
+
 function createNewApp(req, res) {                                     // FUNCTION TO CREATE A NEW ENTRY IN 'APPLICATIONS' DATABASE
     req.body.addedBy = req.user.id;                                   // add user.id value to document to link document to a user
     const application = new Application(req.body);                    // create a new document with 'Application' schema, hold in variable 'application'
-    application.save(err => err ? res.render('applications/new')      // save document to database; if error is returned, re-render app create form
+    application.save(err => err ? res.redirect('/applications/new')      // save document to database; if error is returned, re-render app create form
                                 : res.redirect('/applications')       // if no error redirect to the 'applications' route
     );
 }
 
 function updateApp(req, res) {
-    const application = new Application(req.body);
+    const application = new Application(req.body);  // do I actually need this line????
     Application.findByIdAndUpdate(req.params.id, req.body, {new: true})
         .then(() => res.redirect(`/applications/${req.params.id}`));
 }
@@ -80,6 +88,7 @@ module.exports = {
     new: newAppForm,
     show: showApplication,
     updateForm,
+    newFollow: newFollowForm,
     create: createNewApp,
     update: updateApp,
     delete: deleteApp

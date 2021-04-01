@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<main>
+    <h1>This is the Follow Ups index page.</h1>
+
+    <section>
+        <% follows.forEach(follow => { %>
+        
+            <section>
+                Company: <%=follow.title %><br>
+                Details: <%=follow.details%><br>
+                <a href='/follows/<%=follow._id%>'>View Full Details</a>
+            </section><br><br>
+
+        <% }) %>
+    </section>
+
+</main>
+
+<%- include('../partials/footer') %>

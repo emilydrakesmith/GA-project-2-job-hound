@@ -28,7 +28,8 @@ const applicationsCtrl = require('../controllers/applications');
 router.get('/', applicationsCtrl.index);
 router.get('/new', applicationsCtrl.new);
 router.get('/:id', applicationsCtrl.show);
-router.get('/:id/update', applicationsCtrl.updateForm)
+router.get('/:id/update', applicationsCtrl.updateForm);
+router.get('/:id/new-follow-up', applicationsCtrl.newFollow);
 
 /* POST Requests */
 router.post('/', applicationsCtrl.create);
