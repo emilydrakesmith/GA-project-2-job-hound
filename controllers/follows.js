@@ -47,6 +47,7 @@ function updateFollowForm(req, res) {
 }
 
 function updateFollowData(req, res) {
+    req.body.follow_done = !!req.body.follow_done;
     Follow.findByIdAndUpdate(req.params.id, req.body, {new: true})
         .then(() => res.redirect(`/follows/${req.params.id}`));
 }

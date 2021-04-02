@@ -1,24 +1,23 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h1>This is the Follow Ups Show page.</h1>
-
-    <section>
-        
-            <section class='follow-priority-<%=follow.follow_priority%>'>
-                Title: <%=follow.follow_title %><br>
-                Priority: <%=follow.follow_priority%><br>
-                Complete On: <%=follow.follow_scheduled_date.toDateString()%><br>
-                Details: <%=follow.follow_detail%><br>
-                Complete: <%=follow.follow_done ? 'Yes' : 'No'%><br>                
-                <form action='/follows/<%=follow._id%>/update' method="GET">
-                    <button class='edit-delete-button'>Edit Follow-Up</button>
-                </form>
-                <form action='/follows/<%=follow._id%>?_method=DELETE' method="POST">
-                    <button class='edit-delete-button'>Delete Follow-Up</button>
-                </form>
-                </section><br><br>
-    </section>
+    
+    <section class='follow-priority-<%=follow.follow_priority%>'>
+        <fieldset class='index-job-listing'>
+            <legend>Follow-Up Detailed View</legend>
+        Title: <%=follow.follow_title %><br><br>
+        Priority: <%=follow.follow_priority%><br><br>
+        Complete On: <%=follow.follow_scheduled_date.toDateString()%><br><br>
+        Details: <%=follow.follow_detail%><br><br>
+        Complete: <%=follow.follow_done ? 'Yes' : 'No'%><br>    
+    </fieldset>            
+        <form action='/follows/<%=follow._id%>/update' method="GET">
+            <button class='edit-delete-button'>Edit Follow-Up</button>
+        </form>
+        <form action='/follows/<%=follow._id%>?_method=DELETE' method="POST">
+            <button class='edit-delete-button'>Delete Follow-Up</button>
+        </form>
+    </section><br><br>
 
 </main>
 

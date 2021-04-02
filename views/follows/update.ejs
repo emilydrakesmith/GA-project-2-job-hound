@@ -2,7 +2,7 @@
 
 <main>
     <h1>This is the application update page.</h1>
-    <form action='/follows/<%=follow.appl__id%>?_method=PUT' method='POST'>
+    <form action='/follows/<%=follow._id%>?_method=PUT' method='POST'>
         <fieldset>
         <legend>Edit Follow-Up</legend>
         <%# all input fields pre-populate with existing data %> 
@@ -15,7 +15,7 @@
             </select>
         </label><br>
         <label>Details: <textarea name='follow_detail' cols="30" rows="10"><%=follow.follow_detail%></textarea></label><br>
-        <label>Done: <input type='checkbox'></label>
+        <label>Done: <input name='follow_done' type='checkbox'></label>
         <input type='submit' value='Update Data'>
     </fieldset>
     </form>

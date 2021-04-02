@@ -1,11 +1,9 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h1>This is the Follow Ups index page.</h1>
-
+    <h1>All Follow Ups</h1>
     <section>
         <% follows.forEach(follow => { %>
-        
             <section>
                 Title: <%=follow.follow_title %><br>
                 Priority: <%=follow.follow_priority%><br>

@@ -1,17 +1,6 @@
 const Application = require('../models/application');
 const Follow = require('../models/follow');
 
-/**   All render() functions take two arguments:
- *      1. First argument finds a view in the 'views' directory to render
- *      2. Second argument feeds data to be used by EJS in the view
- *    
- *    Important!  To see the data being passed to a view, insert
- *            <%= JSON.stringify(data); %>
- *      inside the view.  It'll render the object as text inside
- *      the rendered webpage.  Then it's easy to parse the correct
- *      data into the HTML with EJS.
- */
-
 function getIndex(req, res) {
     Application.find({appl_addedBy: req.user._id})
         .then(applications => res.render('applications/index', {
@@ -24,15 +13,6 @@ function getIndex(req, res) {
 function newAppForm(req, res) {
     res.render('applications/new', { title: "Create New Application", user: req.user ? req.user : null });
 }
-
-/** SHOW Function Construction
- *      
- *      1. Call .findByID() on the database being referenced
- *            Single arg: id specified in the GET request router (ie: /applications/:id)
- *      2. Use .then() to make a callback function with the document returned by step 1
- *              1st arg: filepath to view inside 'views' directory
- *              2nd arg: data to feed into the specified view 
- */
 
 function showApplication(req, res) {
     Application.findById(req.params.id)
@@ -53,7 +33,6 @@ function updateForm(req, res){
 }
 
 function newFollowForm(req, res) {
-    console.log(`req.params.id on form link click: ${req.params.id}`)
     res.render('applications/new-follow', {
         title: "Create New Application",
         user: req.user ? req.user : null,
@@ -61,23 +40,22 @@ function newFollowForm(req, res) {
     });
 }
 
-function createNewApp(req, res) {                                     // FUNCTION TO CREATE A NEW ENTRY IN 'APPLICATIONS' DATABASE
-    req.body.appl_addedBy = req.user.id;                                   // add user.id value to document to link document to a user
-    const application = new Application(req.body);                    // create a new document with 'Application' schema, hold in variable 'application'
-    application.save(err => err ? res.redirect('/applications/new')      // save document to database; if error is returned, re-render app create form
-                                : res.redirect('/applications')       // if no error redirect to the 'applications' route
+function createNewApp(req, res) {
+    req.body.appl_addedBy = req.user.id;
+    const application = new Application(req.body);
+    application.save(err => err ? res.redirect('/applications/new')
+                                : res.redirect('/applications')
     );
 }
 
 function updateApp(req, res) {
-    console.log('fo shizzle')
     Application.findByIdAndUpdate(req.params.id, req.body, {new: true})
         .then(res.redirect(`/applications/${req.params.id}`));
 }
 
 function deleteApp(req, res) {
     Application.findByIdAndDelete(req.params.id)
-        .then(result => result.appl_follows.forEach(obj => Follow.findByIdAndDelete(obj._id)))
+        //.then(result => result.appl_follows.forEach(obj => Follow.findByIdAndDelete(obj._id)))
         .then(() => res.redirect(`/applications`));
 }
 

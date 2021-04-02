@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.2.2** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.2.3** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -107,8 +107,12 @@ Version XXXXXXX is the first version with the full range of intended functions s
 #### v 0.2.1 | 02 April 2021 | commit c912dc538beddbd1eff56f7607ebbcadc5c55941
 * Styled `/applications` show page.
 
-#### v 0.2.2 | 02 April 2021 | commit -- | Current Version
-* 
+#### v 0.2.2 | 02 April 2021 | commit 395c36847ba4890e51e701fb110f5b82e31980e7
+* Styled `/follows` show page.
+
+#### v 0.2.3 | 02 April 2021 | commit -- | Current Version
+* Fixed issue editing `follow_done` status on Follow-Up detail view.
+* Removed `console.log()` statements leftover from testing.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
