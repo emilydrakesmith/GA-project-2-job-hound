@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<main>
+    <h1>This is the application update page.</h1>
+    <form action='/follows/<%=follow.appl__id%>?_method=PUT' method='POST'>
+        <fieldset>
+        <legend>Edit Follow-Up</legend>
+        <%# all input fields pre-populate with existing data %> 
+        <label>Follow-Up: <input type='text' name='follow_title' value='<%=follow.follow_title%>' required></label><br>
+        <label>Priority: 
+            <select name='follow_priority' id='follow-form-priority-list' required>
+                <option value='Low'>Low</option>
+                <option value='Medium'>Medium</option>
+                <option value='High'>High</option>
+            </select>
+        </label><br>
+        <label>Details: <textarea name='follow_detail' cols="30" rows="10"><%=follow.follow_detail%></textarea></label><br>
+        <label>Done: <input type='checkbox'></label>
+        <input type='submit' value='Update Data'>
+    </fieldset>
+    </form>
+</main>
+
+<%- include('../partials/footer') %>

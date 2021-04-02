@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.1.6** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.1.7** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -86,10 +86,15 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Form to create a new `Follow` is sending data to proper database with reference to the parent job application.
 * Follow-Ups in database are rendering in `/follows` directory.
 
-#### v 0.1.6 | 01 April 2021 | commit -- | Current Version
+#### v 0.1.6 | 01 April 2021 | commit 164c443d44fbe5f04ac1e5b8526ea872beb3444d
 * Rendering a view for individual Follow-Ups clickable from entries in the `/follows` directory.
 * Index view for `/follows` truncates `follow_detail` value to a snippet if over a specified length.
 * Function `getIndex()` in `controllers/follows.js` will only return Follow-Ups for the logged-in user.
+* Refactored `Application` model in `/models/application.js` so keys indicate they are in the `Application` database.
+* Follow-up update page is rendering properly.
+
+#### v 0.1.7 | 01 April 2021 | commit -- | Current Version
+* Creating a new Follow-Up creates two-way referencing between `Follow` and `Application` databases.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>

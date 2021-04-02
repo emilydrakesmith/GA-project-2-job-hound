@@ -3,31 +3,27 @@
 <main>
     <h1>This is the application detail page.</h1>
     
-        
             <section>
-                <h4>Application Details</h4>
-                Company: <%=application.company%><br><br>
-                Job Title: <%=application.jobTitle%><br><br>
-                JobID: <%=application.jobId%><br><br>
+                <fieldset>
+                    <legend>Application Details</legend>
+                Company: <%=application.appl_company%><br><br>
+                Job Title: <%=application.appl_jobTitle%><br><br>
+                JobID: <%=application.appl_jobId%><br><br>
                 
                 <form action='/applications/<%=application._id%>?_method=DELETE' method='POST'>
                     <input type='submit' value='Delete Application'>
                 </form>
-
-                <a href='/applications/<%=application._id%>/update'>Edit Details</a>
+                <form action='/applications/<%=application._id%>/update' method="GET">
+                    <button>Edit Details</button>
+                </form>
+            </fieldset>
+            </section>
                 <br>
                 
                 <a href='/applications'>Return to All Applications</a>
-            </section>
+            
             
             <a href='/applications/<%=application._id%>/new-follow-up'>Add a Follow-Up</a>
-
-            <section>
-                <h4>Follow-Ups</h4>
-
-                <%# use ejsif - if there are follow-ups scheluled (done or otherwise), render them %>
-                <%# else render text 'no follow-ups scheduled' %> 
-            </section>
     
 
 </main>

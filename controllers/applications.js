@@ -1,4 +1,3 @@
-const { application } = require('express');
 const Application = require('../models/application');
 
 /**   All render() functions take two arguments:
@@ -12,9 +11,8 @@ const Application = require('../models/application');
  *      data into the HTML with EJS.
  */
 
-
 function getIndex(req, res) {
-    Application.find({addedBy: req.user._id})
+    Application.find({appl_addedBy: req.user._id})
         .then(applications => res.render('applications/index', {
             title: 'Applications',
             user: req.user ? req.user : null,
@@ -40,13 +38,12 @@ function showApplication(req, res) {
         .then(application => res.render('applications/show', {
             title: 'Application Detail',
             application,
-            user: req.user ? req.user : null
+            user: req.user ? req.user : null,
         }));
 }
 
 function updateForm(req, res){
     Application.findById(req.params.id)
-        .then(console.log('hi there'))
         .then(application => res.render('applications/update', {
             title: 'Application Detail',
             application,
@@ -64,7 +61,7 @@ function newFollowForm(req, res) {
 }
 
 function createNewApp(req, res) {                                     // FUNCTION TO CREATE A NEW ENTRY IN 'APPLICATIONS' DATABASE
-    req.body.addedBy = req.user.id;                                   // add user.id value to document to link document to a user
+    req.body.appl_addedBy = req.user.id;                                   // add user.id value to document to link document to a user
     const application = new Application(req.body);                    // create a new document with 'Application' schema, hold in variable 'application'
     application.save(err => err ? res.redirect('/applications/new')      // save document to database; if error is returned, re-render app create form
                                 : res.redirect('/applications')       // if no error redirect to the 'applications' route
@@ -72,9 +69,9 @@ function createNewApp(req, res) {                                     // FUNCTIO
 }
 
 function updateApp(req, res) {
-    const application = new Application(req.body);  // do I actually need this line????
+    console.log('fo shizzle')
     Application.findByIdAndUpdate(req.params.id, req.body, {new: true})
-        .then(() => res.redirect(`/applications/${req.params.id}`));
+        .then(res.redirect(`/applications/${req.params.id}`));
 }
 
 function deleteApp(req, res) {

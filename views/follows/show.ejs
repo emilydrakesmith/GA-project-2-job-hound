@@ -11,9 +11,10 @@
                 Complete On: <%=follow.follow_scheduled_date%><br>
                 Details: <%=follow.follow_detail%><br>
                 Complete: <%=follow.follow_done ? 'Yes' : 'No'%><br>
-                <a href='/follows'>Return to Follow-Ups Page</a>
+                follow_id: <%=follow._id%>
+                <a href='/follows/<%=follow._id%>/update'>Edit Details</a>
             </section><br><br>
-
+            <a href='/follows'>Return to Follow-Ups Page</a>
     </section>
 
 </main>
