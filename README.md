@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.2.1** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.2.2** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -104,8 +104,11 @@ Version XXXXXXX is the first version with the full range of intended functions s
 #### v 0.2.0 | 02 April 2021 | commit 71f0c5e0084689f5e3a777e9bfc006b03ebfb458
 * Styled `/applications` index page.
 
-#### v 0.2.1 | 02 April 2021 | commit -- | Current Version
+#### v 0.2.1 | 02 April 2021 | commit c912dc538beddbd1eff56f7607ebbcadc5c55941
 * Styled `/applications` show page.
+
+#### v 0.2.2 | 02 April 2021 | commit -- | Current Version
+* 
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -123,8 +126,6 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Zsh version with [Oh My Zsh](https://ohmyz.sh/)
 * [GitHub](https://github.com/) (online, not desktop)
 * macOS Big Sur version , Apple M1 chip
-
-### This app has the following dependencies:
 
 ### This app is hosted at:
 * [GitHub Repo](https://github.com/mhsmith321/GA-project-2-job-hound)
@@ -154,6 +155,9 @@ Version XXXXXXX is the first version with the full range of intended functions s
 <a id='special-thanks'></a>
 
 # Special Thanks
+
+* Instructors and peers from the General Assembly SEIR-EC-2-22 cohort for collaboration in developing this app. While this app represents my own original work we gave each other assistance in developing our own versions thereof.
+* Formatting this `README.md` file was easy with the help of the [Markdown Live Preview](https://markdownlivepreview.com/) tool and GitHub Guide's [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) page.
 
 [Back to Top](#top)
 <a id='appendices'></a>

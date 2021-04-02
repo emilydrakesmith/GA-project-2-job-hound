@@ -89,6 +89,24 @@ fieldset {
   min-width: 250px;
 }
 
+.edit-delete-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  margin: 15px 0;
+  min-width: 300px;
+  border: 3px solid blue;
+}
+
+.edit-delete-button {
+  min-height: 50px;
+  min-width: 220px;
+  font-size: 22px;
+  border: 2px solid;
+  border-radius: 15px;
+  margin-top: 15px;
+}
+
 h1 {
   font-size: 3.6rem;
 }

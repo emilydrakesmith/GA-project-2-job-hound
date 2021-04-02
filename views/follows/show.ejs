@@ -8,19 +8,16 @@
             <section class='follow-priority-<%=follow.follow_priority%>'>
                 Title: <%=follow.follow_title %><br>
                 Priority: <%=follow.follow_priority%><br>
-                Complete On: <%=follow.follow_scheduled_date%><br>
+                Complete On: <%=follow.follow_scheduled_date.toDateString()%><br>
                 Details: <%=follow.follow_detail%><br>
-                Complete: <%=follow.follow_done ? 'Yes' : 'No'%><br>
-                follow_id: <%=follow._id%>
-                
+                Complete: <%=follow.follow_done ? 'Yes' : 'No'%><br>                
                 <form action='/follows/<%=follow._id%>/update' method="GET">
-                    <button>Edit Follow-Up</button>
+                    <button class='edit-delete-button'>Edit Follow-Up</button>
                 </form>
                 <form action='/follows/<%=follow._id%>?_method=DELETE' method="POST">
-                    <button>Delete Follow-Up</button>
+                    <button class='edit-delete-button'>Delete Follow-Up</button>
                 </form>
-            </section><br><br>
-            <a href='/follows'>Return to Follow-Ups Page</a>
+                </section><br><br>
     </section>
 
 </main>
