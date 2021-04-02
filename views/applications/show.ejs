@@ -10,10 +10,10 @@
             <span class='heading'>Job Id:</span> <%=application.appl_jobId%><br>
         
         <form action='/applications/<%=application._id%>?_method=DELETE' method='POST'>
-            <input type='submit' value='Delete Application'>
+            <input class='edit-delete-button' type='submit' value='Delete Application'>
         </form>
         <form action='/applications/<%=application._id%>/update' method="GET">
-            <button>Edit Details</button>
+            <button class='edit-delete-button'>Edit Details</button>
         </form>
     </fieldset>
     </section>
