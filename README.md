@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.2.4** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.2.5** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -114,8 +114,11 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Fixed issue editing `follow_done` status on Follow-Up detail view.
 * Removed `console.log()` statements leftover from testing.
 
-#### v 0.2.4 | 02 April 2021 | commit -- | Current Version
+#### v 0.2.4 | 02 April 2021 | commit 9c18a2a9a5e681163779f48e5edc491fff403916 | Current Version
 * Resized buttons in `/application` show view.
+
+#### v 0.2.5 | 02 April 2021 | commit --
+* Additions to `README.md` file.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -157,6 +160,12 @@ Version XXXXXXX is the first version with the full range of intended functions s
 <a id='contribute'></a>
 
 # Contribute
+
+Although I'm always interested in meeting new collaborators I prefer to keep this an individual project as a skills demonstrator.
+
+I'm happy to let anyone reuse my code so long as you contact me for advance permission and give attribution where appropriate.  Some materials are specified in this README as proprietary material from General Assembly and should only be used with the direct permission of General Assembly.
+
+If you'd like to learn more about the developer, please visit [my website](https://martysmith.tech/) and [my GitHub](https://github.com/mhsmith321).
 
 [Back to Top](#top)
 <a id='special-thanks'></a>
