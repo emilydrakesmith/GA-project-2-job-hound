@@ -12,7 +12,13 @@
                 Details: <%=follow.follow_detail%><br>
                 Complete: <%=follow.follow_done ? 'Yes' : 'No'%><br>
                 follow_id: <%=follow._id%>
-                <a href='/follows/<%=follow._id%>/update'>Edit Details</a>
+                
+                <form action='/follows/<%=follow._id%>/update' method="GET">
+                    <button>Edit Follow-Up</button>
+                </form>
+                <form action='/follows/<%=follow._id%>?_method=DELETE' method="POST">
+                    <button>Delete Follow-Up</button>
+                </form>
             </section><br><br>
             <a href='/follows'>Return to Follow-Ups Page</a>
     </section>

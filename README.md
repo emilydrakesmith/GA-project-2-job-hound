@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.1.7** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.1.8** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -91,10 +91,13 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Index view for `/follows` truncates `follow_detail` value to a snippet if over a specified length.
 * Function `getIndex()` in `controllers/follows.js` will only return Follow-Ups for the logged-in user.
 * Refactored `Application` model in `/models/application.js` so keys indicate they are in the `Application` database.
+
+#### v 0.1.7 | 02 April 2021 | commit e2c84db3f2befc1d8fde4bc30a8bff19a53469de
+* Creating a new Follow-Up creates two-way referencing between `Follow` and `Application` databases.
 * Follow-up update page is rendering properly.
 
-#### v 0.1.7 | 01 April 2021 | commit -- | Current Version
-* Creating a new Follow-Up creates two-way referencing between `Follow` and `Application` databases.
+#### v 0.1.8 | 02 April 2021 | commit -- | Current Version
+* Delete function is working for Follow-Ups.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -121,14 +124,6 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * [Heroku Hosted Site](https://jobhound-1-mhs.herokuapp.com/)
 
 [Back to Top](#top)
-<a id='apis'></a>
-
-[Back to Top](#top)
-# APIs
-
-Note that there's a good chance this section will not be necessary.
-
-[Back to Top](#top)
 <a id='future-plans'></a>
 
 # Future Plans
@@ -138,6 +133,9 @@ Note that there's a good chance this section will not be necessary.
 * Make sure that deleting a job application also deletes scheduled Follow-Ups.
   * Add a warning prompt about this too.
 * Add code to correct dates entered on Job Apps and Follow-Ups and to display in a more accessible format.
+* When deleting a Follow-Up, reference embedded in Job Applications will be deleted.
+  * Apparently `.post` middleware can accomplish this?
+* When deleting a Job Application, Follow-Ups referenced will be deleted.
 
 [Back to Top](#top)
 <a id='contribute'></a>

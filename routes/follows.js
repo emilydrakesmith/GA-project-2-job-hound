@@ -13,4 +13,7 @@ router.post(('/'), followsCtrl.create);
 /* PUT Requests */
 router.put('/:id', followsCtrl.updateData);
 
+/* DELETE Requests */
+router.delete('/:id', followsCtrl.delete);
+
 module.exports = router;

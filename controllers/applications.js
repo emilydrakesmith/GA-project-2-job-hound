@@ -1,4 +1,5 @@
 const Application = require('../models/application');
+const Follow = require('../models/follow');
 
 /**   All render() functions take two arguments:
  *      1. First argument finds a view in the 'views' directory to render
@@ -76,8 +77,10 @@ function updateApp(req, res) {
 
 function deleteApp(req, res) {
     Application.findByIdAndDelete(req.params.id)
+        .then(result => result.appl_follows.forEach(obj => Follow.findByIdAndDelete(obj._id)))
         .then(() => res.redirect(`/applications`));
 }
+
 /******* END: CONTROLLER FUNCTIONS *******/
 
 module.exports = {

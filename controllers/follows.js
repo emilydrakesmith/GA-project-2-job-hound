@@ -51,11 +51,27 @@ function updateFollowData(req, res) {
         .then(() => res.redirect(`/follows/${req.params.id}`));
 }
 
+function deleteFollow(req, res) {
+    Follow.findByIdAndDelete(req.params.id)
+        .then((result) => removeFollowReference(req, res, result));
+}
+
+function removeFollowReference(req, res, banana) {
+    Application.findById(banana.follow_assoc_appl)
+        .then(appl => {
+            const idx = appl.appl_follows.findIndex(obj => obj._id === req.params.id);
+            appl.appl_follows.splice(idx, 1);
+            appl.save();
+        })
+        .then(res.redirect('/follows'));
+}
+
 
 module.exports = {
     index: getIndex,
     show: showFollow,
     create: createNewFollow,
     updateForm: updateFollowForm,
-    updateData: updateFollowData
+    updateData: updateFollowData,
+    delete: deleteFollow
 }
