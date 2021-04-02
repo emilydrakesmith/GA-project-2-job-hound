@@ -25,19 +25,24 @@ const applicationsCtrl = require('../controllers/applications');
  */
 
 /* GET Requests */
-router.get('/', applicationsCtrl.index);
-router.get('/new', applicationsCtrl.new);
-router.get('/:id', applicationsCtrl.show);
-router.get('/:id/update', applicationsCtrl.updateForm);
-router.get('/:id/new-follow-up', applicationsCtrl.newFollow);
+router.get('/', isLoggedIn, applicationsCtrl.index);
+router.get('/new', isLoggedIn, applicationsCtrl.new);
+router.get('/:id', isLoggedIn, applicationsCtrl.show);
+router.get('/:id/update', isLoggedIn, applicationsCtrl.updateForm);
+router.get('/:id/new-follow-up', isLoggedIn, applicationsCtrl.newFollow);
 
 /* POST Requests */
-router.post('/', applicationsCtrl.create);
+router.post('/', isLoggedIn, applicationsCtrl.create);
 
 /* PUT Requests */
-router.put('/:id', applicationsCtrl.update);
+router.put('/:id', isLoggedIn, applicationsCtrl.update);
 
 /* DELETE Requests */
-router.delete('/:id', applicationsCtrl.delete);
+router.delete('/:id', isLoggedIn, applicationsCtrl.delete);
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) return next();
+    res.redirect("/auth/google");
+}
 
 module.exports = router;

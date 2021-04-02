@@ -1,17 +1,17 @@
 <%- include('../partials/header') %>
 
 <main>
-    <a href='/follows'>Link to Follow-Ups Page</a>
-    <h1>This is the applications index page.</h1>
-    <a href='/applications/new'>Click to log a new application.</a>
+    <form id='new-app-button-form' action='/applications/new' method="GET">
+        <button id='new-app-button'>Log a New App</button>
+    </form>
 
-    <section>
+    <section id='job-apps-wrapper'>
         <% applications.forEach(appl => { %>
         
-            <section>
-                Company: <%=appl.appl_company %><br>
-                Job Title: <%=appl.appl_jobTitle%><br>
-                Job Id: <%=appl.appl_jobId%><br>
+            <section class='index-job-listing'>
+                <span class='heading'>Company:</span> <%=appl.appl_company %><br>
+                <span class='heading'>Job Title:</span> <%=appl.appl_jobTitle%><br>
+                <span class='heading'>Job Id:</span> <%=appl.appl_jobId%><br>
                 <a href='/applications/<%=appl._id%>'>View Details</a>
             </section><br><br>
 

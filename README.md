@@ -29,7 +29,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.1.8** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **0.2.0** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -96,8 +96,13 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Creating a new Follow-Up creates two-way referencing between `Follow` and `Application` databases.
 * Follow-up update page is rendering properly.
 
-#### v 0.1.8 | 02 April 2021 | commit -- | Current Version
-* Delete function is working for Follow-Ups.
+#### v 0.1.8 | 02 April 2021 | commit 4a15c9fa5e3552b12a0e8b2e7001a79470bb1af4
+* Delete function is working for Follow-Up documents.
+  * Also removes references to Follow-Ups inside Applications.
+* Implement CSS for `<header>` and `<nav>`.
+
+#### v 0.2.0 | 02 April 2021 | commit 4a15c9fa5e3552b12a0e8b2e7001a79470bb1af4 | Current Version
+* Styled `/applications` index page.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
