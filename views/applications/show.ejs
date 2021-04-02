@@ -1,14 +1,13 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h1>This is the application detail page.</h1>
     
             <section>
-                <fieldset>
+                <fieldset class='index-job-listing' id='app-detail-fieldset'>
                     <legend>Application Details</legend>
-                Company: <%=application.appl_company%><br><br>
-                Job Title: <%=application.appl_jobTitle%><br><br>
-                JobID: <%=application.appl_jobId%><br><br>
+                    <span class='heading'>Company:</span> <%=application.appl_company %><br>
+                    <span class='heading'>Job Title:</span> <%=application.appl_jobTitle%><br>
+                    <span class='heading'>Job Id:</span> <%=application.appl_jobId%><br>
                 
                 <form action='/applications/<%=application._id%>?_method=DELETE' method='POST'>
                     <input type='submit' value='Delete Application'>
@@ -20,10 +19,10 @@
             </section>
                 <br>
                 
-                <a href='/applications'>Return to All Applications</a>
+                <a class='larger-link' href='/applications'>Return to All Applications</a><br>
             
             
-            <a href='/applications/<%=application._id%>/new-follow-up'>Add a Follow-Up</a>
+            <a class='larger-link' href='/applications/<%=application._id%>/new-follow-up'>Add a Follow-Up</a>
     
 
 </main>

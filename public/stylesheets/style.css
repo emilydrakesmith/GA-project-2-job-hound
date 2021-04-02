@@ -85,6 +85,14 @@ fieldset {
   border-radius: 15px;
 }
 
+#app-detail-fieldset {
+  min-width: 250px;
+}
+
 h1 {
   font-size: 3.6rem;
+}
+
+.larger-link {
+  font-size: 20px;
 }

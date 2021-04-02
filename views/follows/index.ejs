@@ -12,7 +12,7 @@
                 Complete On: <%=follow.follow_scheduled_date%><br>
                 Details: <%=follow.follow_detail.length < 25 ? follow.follow_detail : follow.follow_detail.substring(0,24) + '...'%><br>
                 Complete: <%=follow.follow_done ? 'Yes' : 'No'%><br>
-                <a href='/follows/<%=follow._id%>'>View Full Details</a>
+                <a class='app-detail-view-link' href='/follows/<%=follow._id%>'>View Full Details</a>
             </section><br><br>
 
         <% }) %>
