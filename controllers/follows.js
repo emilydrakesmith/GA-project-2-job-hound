@@ -31,7 +31,7 @@ function createNewFollow(req, res) {
 function addFollowReferenceToAppl(req, res, banana) {
     Application.findById(req.body.follow_assoc_appl)
         .then(appl => {
-            appl.appl_follows.push( { _id: banana._id, ref: 'Follow' } );
+            appl.appl_follows.push( banana._id );
             appl.save()
             .then(res.redirect(`/applications/${appl._id}`));
         })   

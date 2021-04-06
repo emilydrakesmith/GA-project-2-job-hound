@@ -6,7 +6,7 @@ const applicationSchema = new Schema({
     appl_company: {type: String, required: true},
     appl_jobTitle: {type: String, required: true},
     appl_jobId: String,
-    appl_follows: Array
+    appl_follows: [{type: Schema.Types.ObjectId, ref: "Follow"}]
 },{
     timestamps: true
 });

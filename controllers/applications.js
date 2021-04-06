@@ -16,6 +16,7 @@ function newAppForm(req, res) {
 
 function showApplication(req, res) {
     Application.findById(req.params.id)
+        .populate('appl_follows')
         .then(application => res.render('applications/show', {
             title: 'Application Detail',
             application,
