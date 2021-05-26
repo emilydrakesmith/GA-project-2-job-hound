@@ -10,11 +10,10 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 1. [Instructions for Use](#instructions)
 2. [Version Notes](#version-notes)
 3. [Tech Framework](#tech-framework)
-4. [APIs](#apis) (will likely be unnecessary)
-5. [Future Plans](#future-plans)
-6. [Contribute](#contribute)
-7. [Special Thanks](#special-thanks)
-8. [Appendices](#appendices)
+4. [Future Plans](#future-plans)
+5. [Contribute](#contribute)
+6. [Special Thanks](#special-thanks)
+7. [Appendices](#appendices)
    1. [Appendix A: Unit 1 Project Assignment from General Assembly](#appendix-a-assignment)
    2. [Appendix B: Project Pre-Planning](#appendix-b-planning)
    3. [Appendix B: Product Screenshots & Images](#appendix-c-pictures)
@@ -114,11 +113,18 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Fixed issue editing `follow_done` status on Follow-Up detail view.
 * Removed `console.log()` statements leftover from testing.
 
-#### v 0.2.4 | 02 April 2021 | commit 9c18a2a9a5e681163779f48e5edc491fff403916 | Current Version
+#### v 0.2.4 | 02 April 2021 | commit 9c18a2a9a5e681163779f48e5edc491fff403916
 * Resized buttons in `/application` show view.
 
-#### v 0.2.5 | 02 April 2021 | commit --
+#### v 0.2.5 | 02 April 2021 | commit df57a67980fae7ab41c8fd6d8408b6b4e52317fd
 * Additions to `README.md` file.
+
+#### v 1.0.0 | 06 April 2021 | commit 680599913bfe2acfcc5deae773dde02f59aadd74
+* Fixed `.populate()` function in `applications/show.ejs` file.
+* MVP reached.
+
+#### v 1.0.0.1 | 06 April 2021 | commit TBD | Current Version
+* Removed *APIs* section from `README.md` *Table of Contents*.  This project does not query any APIs in its current form.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
