@@ -25,6 +25,17 @@ body {
   margin: 0;
 }
 
+/* Pseudo-classes for hyperlink colors */
+a:link    {color: #a3a3a3;}    /* custom color for un-clicked links */
+a:visited {color: #a3a3a3;}    /* custom color for clicked links */
+a:hover   {color: #e6e6e6;}    /* custom color for links when hovered over */
+a:active  {color: #e6e6e6;}    /* custom color for links being actively clicked */
+
+.link-on-light-background:link    {color: #101010;}    /* custom color for un-clicked links */
+.link-on-light-background:visited {color: #101010;}    /* custom color for clicked links */
+.link-on-light-background:hover   {color: #707070;}    /* custom color for links when hovered over */
+.link-on-light-background:active  {color: #707070;}    /* custom color for links being actively clicked */
+
 header {
   display: flex;
   flex-direction: column;
@@ -34,7 +45,7 @@ header {
 #app-title-text {
   margin: 10px 8px 0px 8px;
   font-size: 24px;
-  color: #c0c0c0;
+  color: #C0C0C0;
 }
 
 nav {
@@ -57,11 +68,7 @@ main {
   justify-content: center;
   margin: 10px;
 }
-/*
-#application-index-main {
-  background-color: purple;
-}
-*/
+
 main a {
   font-size:larger;
 }
@@ -87,7 +94,7 @@ fieldset {
   font-size: 14px;
   margin: 10px;
   padding: 15px;
-  width: auto;
+  width: 300px;
   max-width: 90vw;
   border-radius: 6px;
   background-color: #E0E0E0;
@@ -107,6 +114,10 @@ fieldset {
   font-size: 22px;
   border: 2px solid;
   border-radius: 15px;
+}
+
+#new-app-button:hover {
+  background-color: #909090;
 }
 
 .edit-delete-buttons-wrapper {

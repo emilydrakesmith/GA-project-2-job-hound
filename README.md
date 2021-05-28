@@ -130,12 +130,16 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Added items to list of icebox features/future plans.
 * Added styling to `applications/index.ejs` for spacing, container shape, and colors.
 
-#### v  | 28 May 2021 | commit TBD | Current Version
+#### v 1.0.2  | 28 May 2021 | commit acd4b1db3c6dbf5c540d62bad5069c76dc801fe6
 * Remove raw data from rendering in `applications/show.ejs` view.
 * Cleaned up display in `applications/show.ejs` view and added styling.
   * Refactored `<fieldset>` as a `<section>` and removed an unnecessary wrapper.
 * Added a footer with relevant information and links and styled consistently with header.
   * Includes a size breakpoint to reformat for small screens and mobile devices.
+
+#### v 1.0.3 | 28 May 2021 | commit TBD | Current Version
+* Adjust container styling for `applications/index.ejs` view.
+* Created CSS pseudoclasses for link colors.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
