@@ -31,6 +31,12 @@ header {
   background-color: #202020;
 }
 
+#app-title-text {
+  margin: 10px 8px 0px 8px;
+  font-size: 24px;
+  color: #c0c0c0;
+}
+
 nav {
   font-size: 1.6rem;
   display: flex;
@@ -73,11 +79,16 @@ fieldset {
   justify-content: space-between;
 }
 
+#app-details-heading {
+  font-size: 25px;
+}
+
 .index-job-listing {
   font-size: 14px;
   margin: 10px;
   padding: 15px;
-  width: 300px;
+  width: auto;
+  max-width: 90vw;
   border-radius: 6px;
   background-color: #E0E0E0;
 }
@@ -98,10 +109,6 @@ fieldset {
   border-radius: 15px;
 }
 
-#app-detail-fieldset {
-  min-width: 250px;
-}
-
 .edit-delete-buttons-wrapper {
   display: flex;
   flex-direction: column;
@@ -113,6 +120,7 @@ fieldset {
 .edit-delete-button {
   min-height: 50px;
   min-width: 220px;
+  width: fit-content;
   font-size: 22px;
   border: 2px solid;
   border-radius: 15px;
@@ -125,4 +133,29 @@ h1 {
 
 .larger-link {
   font-size: 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  padding-top: 5px;
+  height: 60px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 2px;
+  background-color: #202020;
+  color: #C0C0C0;
+}
+
+/* breakpoint to resize footer for smaller screens */
+@media only screen and (max-width: 500px) {
+  footer {
+    height: 55px;
+    font-size: 14px;
+  }
+
+  .footer-link {
+    font-size: 12px;
+  }
 }

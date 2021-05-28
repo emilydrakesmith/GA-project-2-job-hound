@@ -123,12 +123,19 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Fixed `.populate()` function in `applications/show.ejs` file.
 * MVP reached.
 
-#### v 1.0.0.1 | 06 April 2021 | commit df57a67980fae7ab41c8fd6d8408b6b4e52317fd
+#### v 1.0.0.1 | 26 May 2021 | commit bb31f5f2cee601e2fce3e886e3b992cf0b58847c
 * Removed *APIs* section from `README.md` *Table of Contents*.  This project does not query any APIs in its current form.
 
-#### v 1.0.1 | 28 May 2021 | commit TBD | Current Version
+#### v 1.0.1 | 28 May 2021 | commit 4a3002739cdd22c68d9e4316e4cf33dc70e24b0a
 * Added items to list of icebox features/future plans.
 * Added styling to `applications/index.ejs` for spacing, container shape, and colors.
+
+#### v  | 28 May 2021 | commit TBD | Current Version
+* Remove raw data from rendering in `applications/show.ejs` view.
+* Cleaned up display in `applications/show.ejs` view and added styling.
+  * Refactored `<fieldset>` as a `<section>` and removed an unnecessary wrapper.
+* Added a footer with relevant information and links and styled consistently with header.
+  * Includes a size breakpoint to reformat for small screens and mobile devices.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -136,8 +143,11 @@ Version XXXXXXX is the first version with the full range of intended functions s
 # Tech Framework
 
 ### This app uses:
-* HTML5 and CSS
+* HTML5 and CSS3
 * JavaScript ES6
+* MongoDB and Mongoose
+* Node.js/Express
+* EJS
 
 ### I built this app with:
 * [VSCode](https://code.visualstudio.com/) version 
@@ -145,7 +155,7 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * [Homebrew](https://brew.sh/) version
 * Zsh version with [Oh My Zsh](https://ohmyz.sh/)
 * [GitHub](https://github.com/) (online, not desktop)
-* macOS Big Sur version , Apple M1 chip
+* macOS Big Sur version 11.4, Apple M1 chip
 
 ### This app is hosted at:
 * [GitHub Repo](https://github.com/mhsmith321/GA-project-2-job-hound)

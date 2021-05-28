@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
 
 <main>
-    <%# below stringify shows application object with follow inside the object %> 
-    <%= JSON.stringify(application) %> 
-    <section>
-        <fieldset class='index-job-listing' id='app-detail-fieldset'>
-            <legend>Application Details</legend>
+
+    <h2 id='app-details-heading'>Application Details</h2>
+    <section class='index-job-listing'>
+
+            
             <span class='heading'>Company:</span> <%=application.appl_company %><br>
             <span class='heading'>Job Title:</span> <%=application.appl_jobTitle%><br>
             <span class='heading'>Job Id:</span> <%=application.appl_jobId%><br>
@@ -16,7 +16,7 @@
         <form action='/applications/<%=application._id%>/update' method="GET">
             <button class='edit-delete-button'>Edit Details</button>
         </form>
-    </fieldset>
+
     </section>
         <br>
         
