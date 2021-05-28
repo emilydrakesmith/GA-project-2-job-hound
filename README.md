@@ -28,7 +28,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **0.2.5** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **1.0.0.1** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -123,8 +123,12 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Fixed `.populate()` function in `applications/show.ejs` file.
 * MVP reached.
 
-#### v 1.0.0.1 | 06 April 2021 | commit TBD | Current Version
+#### v 1.0.0.1 | 06 April 2021 | commit df57a67980fae7ab41c8fd6d8408b6b4e52317fd
 * Removed *APIs* section from `README.md` *Table of Contents*.  This project does not query any APIs in its current form.
+
+#### v 1.0.1 | 28 May 2021 | commit TBD | Current Version
+* Added items to list of icebox features/future plans.
+* Added styling to `applications/index.ejs` for spacing, container shape, and colors.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -152,6 +156,10 @@ Version XXXXXXX is the first version with the full range of intended functions s
 <a id='future-plans'></a>
 
 # Future Plans
+### Strategic
+* Currently I'm styling this app with a mobile-first design based on user stories.  I still need a design that also makes sense for a desktop application.
+
+### Tactical
 * Allow user to alter basic user data (name, etc) after Mongoose automatically creates a user in the user database.
   * Will need to branch the login process to not overwrite data if the user already exists per a matched `req.user.GoogleId` value.
 * Use `.catch(err => [stuff])` to refactor error handling on controller functions.

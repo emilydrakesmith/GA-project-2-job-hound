@@ -1,13 +1,12 @@
 <%- include('../partials/header') %>
 
-<main>
+<main id='application-index-main'>
     <form id='new-app-button-form' action='/applications/new' method="GET">
         <button id='new-app-button'>Log a New App</button>
     </form>
 
     <section id='job-apps-wrapper'>
         <% applications.forEach(appl => { %>
-        
             <section class='index-job-listing'>
                 <span class='heading'>Company:</span> <%=appl.appl_company %><br>
                 <span class='heading'>Job Title:</span> <%=appl.appl_jobTitle%><br>
