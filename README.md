@@ -28,7 +28,7 @@ I am creating this app as a Unit 2 assessment from General Assembly's Software E
 
 # Version Notes
 
-The **1.0.0.1** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
+The **1.0.4** version of this app is currently uploaded.  In cases where I update the README without any updates to the website itself I do not update the version number or use branches for my work.  Each version number will lack a commit number until the next version is uploaded.  The current commit number is always added retroactively.  In general, for version number format X.Y.Z:
 
 * X: increases in this number represent a complete overhaul of some section of the website, source code, or UI
 * Y: increases in this number represent a major functional change/aesthetic change or addition to the app
@@ -137,9 +137,17 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Added a footer with relevant information and links and styled consistently with header.
   * Includes a size breakpoint to reformat for small screens and mobile devices.
 
-#### v 1.0.3 | 28 May 2021 | commit TBD | Current Version
+#### v 1.0.3 | 28 May 2021 | commit TB06c6f1c7fbfb607d15094762d4b8a9bf2890b162D
 * Adjust container styling for `applications/index.ejs` view.
 * Created CSS pseudoclasses for link colors.
+
+#### v 1.0.4 | 01 June 2021 | commit TBD | Current Version
+* Made multiple changes to the `/views/applications/new.ejs` file.
+  * Added significant CSS styling to the form.
+  * Wrote code to let a user enable/disable optional fields.
+  * Added fields for salary offered in a job listing.
+* Added fonts *Suez One* and *Montserrat*.
+* Fixed an issue where `<header>` was opened above `<body>` in the `/views/partials/header.ejs` file.  Oddly enough this seems to have never broken anything previously, or on fixing it.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -172,8 +180,10 @@ Version XXXXXXX is the first version with the full range of intended functions s
 # Future Plans
 ### Strategic
 * Currently I'm styling this app with a mobile-first design based on user stories.  I still need a design that also makes sense for a desktop application.
+* My click handlers are being coded in `.ejs` files in `<script>` containers.  I need to find out if there's a better way to code click handlers.
 
 ### Tactical
+* Add a new section to the `README.md` file containing guides to re-use interesting sections of code (eg, `<switch>` event handlers).
 * Allow user to alter basic user data (name, etc) after Mongoose automatically creates a user in the user database.
   * Will need to branch the login process to not overwrite data if the user already exists per a matched `req.user.GoogleId` value.
 * Use `.catch(err => [stuff])` to refactor error handling on controller functions.
@@ -202,13 +212,14 @@ If you'd like to learn more about the developer, please visit [my website](https
 
 * Instructors and peers from the General Assembly SEIR-EC-2-22 cohort for collaboration in developing this app. While this app represents my own original work we gave each other assistance in developing our own versions thereof.
 * Formatting this `README.md` file was easy with the help of the [Markdown Live Preview](https://markdownlivepreview.com/) tool and GitHub Guide's [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) page.
+* Developing a color pallate involved the extensive use of [Coolors](https://coolors.co/), a free resource created by [Fabrizio Bianchi](http://fabrizio.io/)and checked with [ColorSafe](http://colorsafe.co/) for WCAG-compliant contrast ratios to ensure accessibility.
+* The font [Suez One](https://fonts.google.com/specimen/Suez+One) was created by [Michal Sahar](https://github.com/MichalSahar) and made available through Google Fonts under the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
 
 [Back to Top](#top)
 <a id='appendices'></a>
 
 # Appendices
 
-[Back to Top](#top)
 <a id='appendix-a-assignment'></a>
 
 ## Appendix A: Unit 2 Project Assignment from General Assembly

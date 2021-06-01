@@ -1,5 +1,7 @@
-const Application = require('../models/application');
-const Follow = require('../models/follow');
+/******* START: IMPORT STATEMENTS *******/
+const Application = require('../models/application');   // import the Application data model
+const Follow = require('../models/follow');             // import the Follow data model
+/******* END: IMPORT STATEMENTS *******/
 
 function getIndex(req, res) {
     Application.find({appl_addedBy: req.user._id})
@@ -11,7 +13,7 @@ function getIndex(req, res) {
 }
 
 function newAppForm(req, res) {
-    res.render('applications/new', { title: "Create New Application", user: req.user ? req.user : null });
+    res.render('applications/new', { title: "Log New Application", user: req.user ? req.user : null });
 }
 
 function showApplication(req, res) {

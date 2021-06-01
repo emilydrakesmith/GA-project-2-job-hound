@@ -1,19 +1,61 @@
+<!-- import 'header' partial -->
 <%-include('../partials/header')%> 
 
-<h1>This is the create new application form page.</h1>
-
 <%# all data fields on submit will be attached to req.body %>
+<%# value attached to the 'name' attribute will be matched to a key in a schema %>  
 
-<%# value attached tothe 'name' attribute will be matched to a key in a schema %>  
+<main>
+    <h1>Log a New Application</h1>
+    <form id='new-app-form' action='/applications' method='POST'>
 
-<form id='new-app-form' action='/applications' method='POST'>
-    <fieldset>
-    <legend>Log a New Application</legend>
-    <label>Company:<input type='text' name='appl_company' required autofocus></label><br>
-    <label>Job Title:<input type='text' name='appl_jobTitle' required></label><br>
-    <label>Job ID:<input type='text' name='appl_jobId'></label><br>
-    <input type='submit' value='Add New Application'>
-    </fieldset>
+    <div class='new-app-question-div'>
+        <label class='new-app-top-label'>What company is offering the job?</label><br>
+        <input type='text' name='appl_company' class='new-app-typed-input' required autofocus><br>
+    </div>
+    
+    <div class='new-app-question-div'>
+        <label class='new-app-top-label'>What is the job title?</label><br>
+        <input type='text' name='appl_jobTitle' class='new-app-typed-input' required><br>
+    </div>
+
+    <div class='new-app-question-div'>
+        <label class='new-app-top-label'>Is there a requisition number?</label>
+        <select onchange='toggleInput("requisition-number")'>
+            <option value='no' selected>No</option>
+            <option value='yes'>Yes</option>
+        </select><br>
+        <input type='text' name='appl_jobId' class='new-app-typed-input requisition-number' disabled><br>
+    </div>
+
+    <div class='new-app-question-div'>
+        <label class='new-app-top-label'>Is the job advertising a salary?</label>
+        <select onchange='toggleInput("offered-salary")'>
+            <option value='no' selected>No</option>
+            <option value='yes'>Yes</option>
+        </select><br>
+        <label>How much is being offered?</label><br>
+        <input type='text' name='appl_listedSalary' class='new-app-typed-input offered-salary' disabled><br>
+        <label>Any details listed?  (negotiable, bonuses, etc)</label><br>
+        <input type='text' name='appl_listedSalaryDetails' class='new-app-typed-input offered-salary' disabled><br>
+    </div>
+
+    <input type='submit' value='Track this App!'>
+
+    <script>
+        // function declarations are top-level functions
+        // function expressions are helpers for top-level functions
+        function toggleInput(className) {
+            const elements = document.getElementsByClassName(className);
+            [...elements].forEach(elem => elem.hasAttribute('disabled') ? enableField(elem) : disableField(elem));
+        }
+        const enableField = field => field.removeAttribute('disabled')
+        const disableField = field => {
+            field.setAttribute('disabled', '');
+            field.value = '';
+        }
+    </script>
+
 </form>
+</main>
 
 <%-include('../partials/footer')%> 
