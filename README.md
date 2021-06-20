@@ -2,7 +2,7 @@
 
 # Introduction
 
-*Job Hound* is an app that will allow users who are conducting an active job search to collect information about jobs they have applied to and to plan their process for and organize data about follow-up activities related to their job applications.
+*Job Hound* is an app that will allow users who are conducting an active job search to collect information about jobs they have applied to and to plan their process for and organize data about follow-up activities related to their job applications.  [Click here to see the live app!](https://jobhound-1-mhs.herokuapp.com)
 
 I am creating this app as a Unit 2 assessment from General Assembly's Software Engineering Immersive-Remote program.  For more information about the specifications of this assignment, please reference [Appendix A: Unit 1 Project Assignment from General Assembly](#appendix-a-assignment).
 
@@ -137,17 +137,20 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Added a footer with relevant information and links and styled consistently with header.
   * Includes a size breakpoint to reformat for small screens and mobile devices.
 
-#### v 1.0.3 | 28 May 2021 | commit TB06c6f1c7fbfb607d15094762d4b8a9bf2890b162D
+#### v 1.0.3 | 28 May 2021 | commit 06c6f1c7fbfb607d15094762d4b8a9bf2890b162
 * Adjust container styling for `applications/index.ejs` view.
 * Created CSS pseudoclasses for link colors.
 
-#### v 1.0.4 | 01 June 2021 | commit TBD | Current Version
+#### v 1.0.4 | 01 June 2021 | commit 3f32cb4b54ba2057b6b328b715c4b0f1a64425fe
 * Made multiple changes to the `/views/applications/new.ejs` file.
   * Added significant CSS styling to the form.
   * Wrote code to let a user enable/disable optional fields.
   * Added fields for salary offered in a job listing.
 * Added fonts *Suez One* and *Montserrat*.
 * Fixed an issue where `<header>` was opened above `<body>` in the `/views/partials/header.ejs` file.  Oddly enough this seems to have never broken anything previously, or on fixing it.
+
+#### v1.0.4.1 | 20 June 2021 | commit TBD | Current Version
+* Added a link to the live app at the top of the README.md file.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
@@ -203,7 +206,7 @@ Although I'm always interested in meeting new collaborators I prefer to keep thi
 
 I'm happy to let anyone reuse my code so long as you contact me for advance permission and give attribution where appropriate.  Some materials are specified in this README as proprietary material from General Assembly and should only be used with the direct permission of General Assembly.
 
-If you'd like to learn more about the developer, please visit [my website](https://martysmith.tech/) and [my GitHub](https://github.com/mhsmith321).
+If you'd like to learn more about the developer, please visit [my website](https://martysmith.tech/), [GitHub](https://github.com/mhsmith321), and [LinkedIn](https://www.linkedin.com/in/the-marty-smith/).  Anyone interested in my work is invited to network with me.
 
 [Back to Top](#top)
 <a id='special-thanks'></a>
@@ -212,8 +215,9 @@ If you'd like to learn more about the developer, please visit [my website](https
 
 * Instructors and peers from the General Assembly SEIR-EC-2-22 cohort for collaboration in developing this app. While this app represents my own original work we gave each other assistance in developing our own versions thereof.
 * Formatting this `README.md` file was easy with the help of the [Markdown Live Preview](https://markdownlivepreview.com/) tool and GitHub Guide's [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) page.
-* Developing a color pallate involved the extensive use of [Coolors](https://coolors.co/), a free resource created by [Fabrizio Bianchi](http://fabrizio.io/)and checked with [ColorSafe](http://colorsafe.co/) for WCAG-compliant contrast ratios to ensure accessibility.
-* The font [Suez One](https://fonts.google.com/specimen/Suez+One) was created by [Michal Sahar](https://github.com/MichalSahar) and made available through Google Fonts under the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
+* Developing a color pallate involved the extensive use of [Coolors](https://coolors.co/), a free resource created by [Fabrizio Bianchi](http://fabrizio.io/) and checked with [ColorSafe](http://colorsafe.co/) for WCAG-compliant contrast ratios to ensure accessibility.
+* The [Suez One](https://fonts.google.com/specimen/Suez+One) font was created by [Michal Sahar](https://github.com/MichalSahar) and made available through Google Fonts under the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
+* The [Montserrat](https://fonts.google.com/specimen/Montserrat) font was principally designed by [Julieta Ulanovsky](https://twitter.com/julietulanovsky?lang=en) and made available through Google Fonts under the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL).
 
 [Back to Top](#top)
 <a id='appendices'></a>
