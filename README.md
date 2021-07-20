@@ -149,16 +149,19 @@ Version XXXXXXX is the first version with the full range of intended functions s
 * Added fonts *Suez One* and *Montserrat*.
 * Fixed an issue where `<header>` was opened above `<body>` in the `/views/partials/header.ejs` file.  Oddly enough this seems to have never broken anything previously, or on fixing it.
 
-#### v 1.0.4.1 | 20 June 2021 | commit 63d8467e23c5c67cc3a45baaf6ac9b73e74b14ca | Current Version
+#### v 1.0.4.1 | 20 June 2021 | commit 63d8467e23c5c67cc3a45baaf6ac9b73e74b14ca
 * Added a link to the live app at the top of the README.md file.
 
-#### BRANCH split-header-for-local-stylesheets | 20 June 2021 | commit --
+#### BRANCH split-header-for-local-stylesheets | 20 June 2021 | commit ba3f13f6062f9b316a41f878f78aef4b67568c91
 * Initialized new files `header-top.ejs` and `header-bottom.ejs` in the `/views/partials` directory.
 * Copy/pasted code from `header.ejs` from the top through to and including the link to `style.css` to the new `header-top.ejs` file.
 * Copy/pasted code from `header.ejs` starting immediately after the `style.css` link through to the end into `header-bottom.ejs` file.
 * Refactored every view that called `header.ejs` to call both the `header-top.ejs` and `header-bottom.ejs` files.
 * Deleted the `header.ejs` file after a search confirmed no other files are calling it.
 * Renamed `style.css` as `global.css` and updated import statements as appropriate (only called in `header-top.ejs`).
+
+#### v 1.1.0.0 | 20 June 2021 | commit -- | Current Version
+* Merge PR on GH to to incorporate branch `split-header-for-local-stylesheets` into main.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
