@@ -1,0 +1,20 @@
+<!-- import title will render dynamically on every page based on data passed to the view -->
+<title><%=title%></title>
+</head>
+<body>
+    <header>
+        <h1 id='app-title-text'>Job Hound: Track those Apps!</h1>
+        <nav>
+            <% if (user) { %>
+                <div id='nav-div'>
+                    <a href='/applications'>View Apps</a>
+                    <a href='/follows'> View Follow-Ups</a>
+                </div>
+                <div id='logout-div'><a href="/auth/logout">Log Out</a></div>
+            <% } else { %>
+                <a href="/auth/google">Login with Google</a>
+            <% } %>
+        </nav>
+    </header>
+
+<!-- partial view /partials/footer.ejs has closing tags </body> and </html> -->
