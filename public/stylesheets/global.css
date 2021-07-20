@@ -66,10 +66,11 @@ nav {
 }
 
 main {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -190,7 +191,6 @@ h1 {
 }
 
 footer {
-  bottom: 0;
   padding-top: 5px;
   height: 60px;
   width: 100%;
