@@ -1,0 +1,14 @@
+@media screen and (min-width: 800px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 'job-info follow-ups';
+    }
+    
+    #job-information {
+        grid-area: job-info;
+        display: flex;
+        flex-direction: column;
+    }
+}
+

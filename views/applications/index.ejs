@@ -9,9 +9,9 @@
     <section id='job-apps-wrapper'>
         <% applications.forEach(appl => { %>
             <section class='index-job-listing'>
-                <span class='heading'>Company:</span> <%=appl.appl_company %><br>
-                <span class='heading'>Job Title:</span> <%=appl.appl_jobTitle%><br>
-                <span class='heading'>Job Id:</span> <%=appl.appl_jobId%><br>
+                <span class='heading-apps'>Company:</span> <%=appl.appl_company %><br>
+                <span class='heading-apps'>Job Title:</span> <%=appl.appl_jobTitle%><br>
+                <span class='heading-apps'>Job Id:</span> <%=appl.appl_jobId%><br>
                 <a href='/applications/<%=appl._id%>' class='link-on-light-background'>View Details</a>
             </section><br><br>
         <% }) %>

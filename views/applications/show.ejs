@@ -1,30 +1,33 @@
 <%- include('../partials/header-top') %>
+<link rel="stylesheet" href="/stylesheets/applications/show.css" />
 <%- include('../partials/header-bottom') %>
 
 <main>
-
-    <h2 id='app-details-heading'>Application Details</h2>
-    <section class='index-job-listing'>
-            
+    <div id='job-information'>
+        <h2 id='app-details-heading'>Application Details</h2>
+        <section class='index-job-listing'>
+                
             <span class='heading'>Company:</span> <%=application.appl_company %><br>
             <span class='heading'>Job Title:</span> <%=application.appl_jobTitle%><br>
             <span class='heading'>Job Id:</span> <%=application.appl_jobId%><br>
-        
-        <form action='/applications/<%=application._id%>?_method=DELETE' method='POST'>
-            <input class='edit-delete-button' type='submit' value='Delete Application'>
-        </form>
-        <form action='/applications/<%=application._id%>/update' method="GET">
-            <button class='edit-delete-button'>Edit Details</button>
-        </form>
+            
+            <form action='/applications/<%=application._id%>?_method=DELETE' method='POST'>
+                <input class='edit-delete-button' type='submit' value='Delete Application'>
+            </form>
+            <form action='/applications/<%=application._id%>/update' method="GET">
+                <button class='edit-delete-button'>Edit Details</button>
+            </form>
 
-    </section>
+        </section>
         <br>
         
         <a class='larger-link' href='/applications'>Return to All Applications</a><br>
-    
-    
-    <a class='larger-link' href='/applications/<%=application._id%>/new-follow-up'>Add a Follow-Up</a>
-    
+        
+        <a class='larger-link' href='/applications/<%=application._id%>/new-follow-up'>Add a Follow-Up</a>
+    </div>
+    <div id='follow-ups'>
+
+    </div>
 
 </main>
 
