@@ -22,7 +22,10 @@ body {
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
   margin: 0;
+  min-height: 100vh;
 }
 
 /* Pseudo-classes for hyperlink colors */
@@ -86,10 +89,6 @@ fieldset {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-#app-details-heading {
-  font-size: 25px;
 }
 
 .index-job-listing {
@@ -191,7 +190,6 @@ h1 {
 }
 
 footer {
-  position: fixed;
   bottom: 0;
   padding-top: 5px;
   height: 60px;

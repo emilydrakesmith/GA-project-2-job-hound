@@ -1,14 +1,46 @@
-@media screen and (min-width: 800px) {
-    main {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-areas: 'job-info follow-ups';
-    }
-    
-    #job-information {
-        grid-area: job-info;
-        display: flex;
-        flex-direction: column;
-    }
+main {
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    margin: 0;
+}
+
+#job-information {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.job-listing {
+    margin: 10px;
+    padding: 15px;
+    border-radius: 6px;
+    width: 300px;
+    font-size: 14px;
+    background-color: #E0E0E0;
+}
+
+#follow-ups {
+    width: 600px;
+    align-self: stretch;
+    padding: 12px;
+    background-color: #E0E0E0;
+}
+
+.follow-up {
+    margin: 8px;
+    padding: 12px;
+    background-color: green;
+}
+
+.follow-up h3 {
+    font-size: x-large;
+}

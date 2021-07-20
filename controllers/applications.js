@@ -22,7 +22,7 @@ function showApplication(req, res) {
         .then(application => res.render('applications/show', {
             title: 'Application Detail',
             application,
-            user: req.user ? req.user : null,
+            user: req.user ? req.user : null
         }));
 }
 

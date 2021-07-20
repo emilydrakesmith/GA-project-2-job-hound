@@ -4,8 +4,8 @@
 
 <main>
     <div id='job-information'>
-        <h2 id='app-details-heading'>Application Details</h2>
-        <section class='index-job-listing'>
+        <h2>Application Details</h2>
+        <section class='job-listing'>
                 
             <span class='heading'>Company:</span> <%=application.appl_company %><br>
             <span class='heading'>Job Title:</span> <%=application.appl_jobTitle%><br>
@@ -26,9 +26,15 @@
         <a class='larger-link' href='/applications/<%=application._id%>/new-follow-up'>Add a Follow-Up</a>
     </div>
     <div id='follow-ups'>
-
+        <h2>Follow Ups</h2>
+        <% application.appl_follows.forEach(follow => { %>
+            <section class='follow-up'>
+                <h3><%= follow.follow_title %> </h3>
+                <h3><%= follow.follow_done ? 'Complete' : 'Not Complete' %></h3>
+                <h3><%= follow.follow_detail %> </h3>
+            </section>
+        <% }) %>
     </div>
-
 </main>
 
 <%- include('../partials/footer') %>

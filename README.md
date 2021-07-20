@@ -163,11 +163,17 @@ Version XXXXXXX is the first version with the full range of intended functions s
 #### v 1.1.0.0 | 20 July 2021 | commit 0dd01d0809be06dbbba3a4600c172c0fbc31a618 | Current Version
 * Merge PR on GH to to incorporate branch `split-header-for-local-stylesheets` into main.
 
-#### BRANCH display-followups-on-job-app-show-page | 20 July 2021 | commit --
+#### BRANCH display-followups-on-job-app-show-page | 20 July 2021 | commit 5cf89e0630bba68dea9719ae6c803ea1fc803544
 * In `global.css` I changed `margin: 10px;` to `padding: 10px;` in the under selector for `main`.
   * Made some changes to `global.css` to be able to separate local CSS into 
 * Linked the file at `/applications/show.css` in the relevant `.ejs` view template.
 * Refactored `/applications/show.ejs` template to use CSS Grid.
+
+#### BRANCH display-followups-on-job-app-show-page | 20 July 2021 | commit --
+* Successfully rendering raw data for job application follow-ups in the correct `<div>` in the `/applications/show.ejs` view.
+* Created containers for individual follow-ups displayed in the `/applications/show.ejs` view.
+* Refactored CSS for `<footer>` element in `global.css` so that it will be pushed below the bottom of the screen if enough content is present to require scrolling.
+* Moved additional CSS from `global.css` to `/public/stylesheets/applications/show.css`.
 
 [Back to Top](#top)
 <a id='tech-framework'></a>
